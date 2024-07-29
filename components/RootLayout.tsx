@@ -1,22 +1,16 @@
-// components/RootLayout.tsx
+// componenets/RootLayout.tsx
+import React from "react";
 import { useDarkMode } from "../contexts/DarkModeContext";
-import { useEffect } from "react";
 
-const RootLayout: React.FC = ({ children }) => {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   // Retrieve dark mode status from context
   const { darkMode } = useDarkMode();
 
-  useEffect(() => {
-    // Toggle the 'dark' class on the root element based on darkMode state
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]); // Dependency array: useEffect runs whenever darkMode changes
-
-  // Render children components inside the layout
-  return <>{children}</>;
+  return <div className={darkMode ? "dark" : ""}>{children}</div>;
 };
 
 export default RootLayout;
