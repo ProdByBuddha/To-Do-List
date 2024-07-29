@@ -1,0 +1,170 @@
+/* styles/globals.css */
+/* Import Tailwind CSS base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  /* Global styles for HTML and body elements */
+  html,
+  body {
+    @apply p-0 m-0 font-sans text-gray-900 bg-gray-50; /* Remove default padding and margin, use sans-serif font, set default text and background colors */
+  }
+
+  /* Styles for anchor tags */
+  a {
+    @apply text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800; /* Blue text color, no underline, transition effects for color change on hover */
+  }
+
+  /* Dark mode styles */
+  .dark html,
+  .dark body {
+    @apply bg-gray-900 text-gray-100; /* Dark background and text colors for dark mode */
+  }
+
+  .dark a {
+    @apply text-blue-400 hover:text-blue-300; /* Lighter blue text color in dark mode, with color transition on hover */
+  }
+}
+
+/* Component-specific styles */
+@layer components {
+  /* Container styling for centering content */
+  .container {
+    @apply px-4 mx-auto max-w-4xl; /* Padding, auto margin for centering, and max width */
+  }
+
+  /* Main content styling */
+  .main {
+    @apply py-12 flex flex-col justify-center items-center max-w-full; /* Vertical padding, flexbox centering, and max width */
+  }
+
+  /* Header styling */
+  .header {
+    @apply text-center mb-8; /* Centered text and bottom margin */
+  }
+
+  /* Title styling */
+  .title {
+    @apply m-0 text-4xl font-bold mb-4; /* Remove margin, large font size, bold text, and bottom margin */
+  }
+
+  /* Description styling */
+  .description {
+    @apply text-xl text-gray-600 mb-8; /* Extra-large text size, gray color, and bottom margin */
+  }
+
+  /* Todo container styling */
+  .todo-container {
+    @apply w-full max-w-md bg-white shadow-lg rounded-lg p-6; /* Full width, max width, white background, shadow, rounded corners, and padding */
+  }
+
+  /* Todo input field styling */
+  .todo-input {
+    @apply mb-4; /* Bottom margin */
+  }
+
+  /* Input field styling */
+  .input {
+    @apply w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500; /* Full width, padding, border, rounded corners, and focus ring */
+  }
+
+  /* Button styling */
+  .btn {
+    @apply px-4 py-2 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2; /* Padding, rounded corners, color transition, and focus ring */
+  }
+
+  /* Primary button styling */
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500; /* Blue background, white text, hover effect, and focus ring */
+  }
+
+  /* Danger button styling */
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500; /* Red background, white text, hover effect, and focus ring */
+  }
+
+  /* Task list styling */
+  .task-list {
+    @apply space-y-2; /* Vertical spacing between tasks */
+  }
+
+  /* Individual task styling */
+  .task {
+    @apply flex items-center justify-between p-3 bg-white border border-gray-200 rounded-md shadow-sm; /* Flexbox layout, padding, background color, border, rounded corners, and shadow */
+  }
+
+  /* Task text styling */
+  .task-text {
+    @apply flex-grow mr-4; /* Allow text to grow, margin-right */
+  }
+
+  /* Completed task text styling */
+  .task-completed {
+    @apply line-through text-gray-500; /* Line-through for completed tasks and gray text color */
+  }
+
+  /* Task due date styling */
+  .task-due-date {
+    @apply text-sm text-gray-600; /* Small text size and gray color */
+  }
+
+  /* Overdue task styling */
+  .task-overdue {
+    @apply text-red-600 font-semibold; /* Red text color and bold font */
+  }
+
+  /* Dark mode styles for components */
+  .dark .todo-container {
+    @apply bg-gray-800; /* Dark background for todo container in dark mode */
+  }
+
+  .dark .task {
+    @apply bg-gray-700 border-gray-600; /* Dark background and border for tasks in dark mode */
+  }
+
+  .dark .task-text {
+    @apply text-gray-100; /* Light text color for task text in dark mode */
+  }
+
+  .dark .task-due-date {
+    @apply text-gray-400; /* Lighter gray text color for due date in dark mode */
+  }
+
+  .dark .task-overdue {
+    @apply text-red-400; /* Lighter red text color for overdue tasks in dark mode */
+  }
+
+  .dark .input {
+    @apply bg-gray-700 border-gray-600 text-gray-100; /* Dark background, border, and text color for inputs in dark mode */
+  }
+
+  .dark .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600; /* Lighter blue background for primary button in dark mode */
+  }
+
+  .dark .btn-danger {
+    @apply bg-red-500 hover:bg-red-600; /* Lighter red background for danger button in dark mode */
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Fade-in animation utility class */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out; /* Apply fade-in animation */
+  }
+
+  /* Keyframes for fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px); /* Start with opacity 0 and translated up */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* End with opacity 1 and original position */
+    }
+  }
+}
